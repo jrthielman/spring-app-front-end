@@ -1,0 +1,35 @@
+<div class="email-verify-container">
+  <span *ngIf="token === 'nothing'; else verify">
+    <div class="email-verify-box">
+      <form [formGroup]="emailVerifyForm" (ngSubmit)="onSubmit(emailVerifyForm.valid)">
+        <div class="email-verify-form">
+          <div class="email-token-box">
+            <div class="email-token-field">
+              <p>E-mail token</p>
+              <input type="text" placeholder="Token" formControlName="emailToken">
+              <span *ngIf="verifiedCode === 'SUCCESS'">
+                <p class="succes-text">Succesfully verified</p>
+              </span>
+              <span *ngIf="verifiedCode === 'ERROR'">
+                <p class="error-text">Invalid token</p>
+              </span>
+            </div>
+          </div>
+          <div class="submit-box">
+            <div class="submit">
+              <button [disabled]="!emailVerifyForm.valid">Verify</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </span>
+  <ng-template #verify>
+    <span *ngIf="verifiedCode === 'SUCCESS'">
+      <p class="succes-text">Succesfully verified</p>
+    </span>
+    <span *ngIf="verifiedCode === 'ERROR'">
+      <p class="error-text">This email has already been verified or the time to verify has expired</p>
+    </span>
+  </ng-template>
+</div>

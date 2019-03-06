@@ -1,0 +1,42 @@
+.error-text{
+    margin: 0px;
+    color: red;
+}
+
+.succes-text{
+    margin: 0px;
+    color: green;
+}
+
+.email-verify-container{
+    display: flex;
+    justify-content: center;
+  }
+  
+.email-verify-box{
+    padding: 5px;
+    border: 1px solid darkblue;
+    background: lightblue;
+}
+
+.email-verify-form{
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    padding: 10px;
+    background: #fff;
+}
+
+.email-token-box{
+    grid-row: 1;
+}
+
+.submit-box{
+    grid-row: 2;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.submit{
+    display: flex;
+    align-items: flex-end;
+}

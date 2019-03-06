@@ -1,0 +1,17 @@
+<div class="outer-flex-container">
+  <span *ngIf="isAuthenticated(); else notAuthenticated">
+    <div class="flex-container">
+      <button (click)="refreshList()">Refresh</button>
+      <div class="grid-container">
+        <div class="user" *ngFor="let user of users">
+          {{user.email}}
+        </div>
+      </div>
+    </div>
+  </span>
+  <ng-template #notAuthenticated>
+    <p>You must login to view this page
+      <a routerLink="login">click here</a>
+    </p>
+  </ng-template>
+</div>
