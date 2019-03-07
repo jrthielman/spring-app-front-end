@@ -17,8 +17,8 @@ import { openError } from '../animation/error';
 export class LoginComponent implements OnInit {
 
   loginForm = this.fb.group({
-    email: ['MyNewEmail00', Validators.required],
-    password: ['mypassword', Validators.required]
+    email: ['', Validators.required],
+    password: ['', Validators.required]
   });
 
   errorCode: number;

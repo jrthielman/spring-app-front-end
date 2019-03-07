@@ -1,3 +1,13 @@
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  th, td {
+    padding: 5px;
+    text-align: left;    
+  }
+
 .outer-flex-container{
     display: flex;
     align-items: center;
@@ -24,8 +34,6 @@
 }
 
 .user{
-    padding: 10px;
     grid-column: 6 span;
     background: lightblue;
-    border: 1px solid darkblue;
 }

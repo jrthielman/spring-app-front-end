@@ -1,0 +1,51 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <div class="outer-form-box">
+    <div class="inner-form-box">
+      <div style="display: flex; flex-wrap: wrap">
+        <div class="form-field">
+          <p>First name</p>
+          <input type="text" formControlName="firstName" placeholder="First name">
+          <span *ngIf="firstName.invalid && firstName.touched">
+            <small class="error-message" *ngIf="firstName.errors?.required">First name is required</small>
+            <small class="error-message" *ngIf="firstName.errors?.minlength">First name must contain more than 3
+              characters</small>
+          </span>
+        </div>
+        <div class="form-field">
+          <p>Last name</p>
+          <input type="text" formControlName="lastName" placeholder="Last name">
+          <span *ngIf="lastName.invalid && lastName.touched">
+            <small class="error-message" *ngIf="lastName.errors?.required">Last name is required</small>
+            <small class="error-message" *ngIf="lastName.errors?.minlength">Last name must contain more than 5
+              characters</small>
+          </span>
+        </div>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; margin-top: 10px;">
+        <div class="form-field">
+          <p>E-mail</p>
+          <input type="email" formControlName="email" placeholder="E-mail">
+          <span *ngIf="email.invalid && email.touched">
+            <small class="error-message" *ngIf="email.errors?.required">E-mail is required</small>
+            <small class="error-message" *ngIf="email.errors?.email">This e-mail is invalid</small>
+          </span>
+        </div>
+        <div class="form-field">
+          <p>Password</p>
+          <input type="password" formControlName="password" placeholder="Password">
+          <span *ngIf="password.invalid && password.touched">
+            <small class="error-message" *ngIf="password.errors?.required">password is required</small>
+            <small class="error-message" *ngIf="password.errors?.minlength">Password must have more than 10
+              characters</small>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="submit-box">
+      <input type="submit" [disabled]="!userForm.valid" value="Submit">
+    </div>
+  </div>
+</form>
+<p class="error-message" *ngIf="errorCode == 409">A user with the same e-mail already exists</p>
+<p class="error-message" *ngIf="errorCode == 500">The given email is not valid</p>
+<p class="succes-message" *ngIf="errorCode == 200">Account has been made. Please check your mail to verify your account</p>

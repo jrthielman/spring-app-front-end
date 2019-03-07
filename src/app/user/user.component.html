@@ -4,7 +4,24 @@
       <button (click)="refreshList()">Refresh</button>
       <div class="grid-container">
         <div class="user" *ngFor="let user of users">
-          {{user.email}}
+          <table>
+            <tr>
+              <th>Firstname</th>
+              <th>Lastname</th>
+              <th>E-mail</th>
+            </tr>
+            <tr>
+              <td>
+                {{user.firstName}}
+              </td>
+              <td>
+                {{user.lastName}}
+              </td>
+              <td>
+                {{user.email}}
+              </td>
+            </tr>
+          </table>
         </div>
       </div>
     </div>

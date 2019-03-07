@@ -10,13 +10,15 @@ import { UserComponent } from './user/user.component';
 import { httpInterceptorProviders } from './auth/token-interceptor';
 import { EmailVerificationComponent } from './emailverification/emailverification.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UserformComponent } from './form/userform/userform.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     UserComponent,
-    EmailVerificationComponent
+    EmailVerificationComponent,
+    UserformComponent
   ],
   imports: [
     BrowserModule,

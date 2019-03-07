@@ -2,3 +2,8 @@
 .error-message{
     color: red;
 }
+
+.succes-message{
+    margin: 0px;
+    color: green;
+}

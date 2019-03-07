@@ -1,0 +1,33 @@
+.outer-form-box{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background: lightblue;
+    border: 1px solid darkblue;
+}
+
+.inner-form-box{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background: #fff;
+    padding: 5px;
+}
+
+.form-field{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-top: 5px;
+}
+
+.form-field > p{
+    margin: 0 0 5px 0;
+}
+
+.submit-box{
+    background: #fff;
+    padding: 10px 5px 10px 10px;
+    display: flex;
+    justify-content: flex-end;
+}
